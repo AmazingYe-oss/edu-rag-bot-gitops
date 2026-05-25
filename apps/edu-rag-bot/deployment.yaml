@@ -18,7 +18,7 @@ spec:
         - name: edu-rag-bot
           image: crpi-he7mqvhihpnvi08o.cn-shanghai.personal.cr.aliyuncs.com/my-rag-project/rag-service:latest
           imagePullPolicy: Always
-          envfrom:
+          envFrom:
             - secretRef:
                 name: edu-rag-bot-secret
           ports:
