@@ -6,3 +6,4 @@ namespace: edu-rag-bot
 resources:
   - deployment.yaml
   - service.yaml
+  - ingress.yaml
