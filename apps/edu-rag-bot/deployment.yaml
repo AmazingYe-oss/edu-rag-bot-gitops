@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: edu-rag-bot
-          image: crpi-he7mqvhihpnvi08o.cn-shanghai.personal.cr.aliyuncs.com/my-rag-project/rag-service:21476449da2a16da85b62746fd2a687ef4bb7827
+          image: crpi-he7mqvhihpnvi08o.cn-shanghai.personal.cr.aliyuncs.com/my-rag-project/rag-service:36eb991d03e1d02f51eb68aa7a03889da2975bec
           imagePullPolicy: Always
           envFrom:
             - secretRef:
