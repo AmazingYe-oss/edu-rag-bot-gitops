@@ -28,6 +28,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: rag-backend-svc
+  namespace: edu-rag-bot
   labels: rag-backend
 spec:
   selector:
@@ -77,20 +78,22 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 7860
-
----
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: rag-backend-monitor
+  namespace: edu-rag-bot      # <--- 明确指明自己在哪
   labels:
-    release: prometheus 
+    release: prometheus       # <--- 对接 Prometheus 的接头暗号
 spec:
+  namespaceSelector:          
+    matchNames:
+      - edu-rag-bot           # <--- 强行命令它去这个命名空间里抓人！
   selector:
     matchLabels:
-      app: rag-backend
+      app: rag-backend        # <--- 去抓带有这个身份证的 Service！
   endpoints:
-    - port: http-metrics   
-      path: /metrics       
-      interval: 15s        
+    - port: http-metrics
+      path: /metrics
+      interval: 15s
