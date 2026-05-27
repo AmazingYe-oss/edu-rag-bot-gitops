@@ -29,7 +29,8 @@ kind: Service
 metadata:
   name: rag-backend-svc
   namespace: edu-rag-bot
-  labels: rag-backend
+  labels: 
+    app: rag-backend
 spec:
   selector:
     app: rag-backend
