@@ -32,7 +32,8 @@ spec:
   selector:
     app: rag-backend
   ports:
-    - protocol: TCP
+    - name: http-metrics
+      protocol: TCP
       port: 80
       targetPort: 8000
 
@@ -75,3 +76,20 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 7860
+
+---
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: rag-backend-monitor
+  labels:
+    release: prometheus 
+spec:
+  selector:
+    matchLabels:
+      app: rag-backend
+  endpoints:
+    - port: http-metrics   
+      path: /metrics       
+      interval: 15s        
