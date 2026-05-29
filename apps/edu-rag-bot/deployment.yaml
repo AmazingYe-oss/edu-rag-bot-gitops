@@ -65,6 +65,8 @@ spec:
           env:
             - name: API_URL
               value: "http://rag-backend-svc/api/chat"
+            - name: UPLOAD_URL
+              value: "http://rag-backend-svc/api/upload"
           ports:
             - containerPort: 7860
 ---
