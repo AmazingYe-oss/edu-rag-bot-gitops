@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: crpi-he7mqvhihpnvi08o.cn-shanghai.personal.cr.aliyuncs.com/my-rag-project/rag-service:c27b2f9d84b0a4bf1f234320dc430f5e2ef6066d
+          image: crpi-he7mqvhihpnvi08o.cn-shanghai.personal.cr.aliyuncs.com/my-rag-project/rag-service:73985b997d8fadc580d340aa8da7fea50a7634e1
           imagePullPolicy: Always
           envFrom:
             - secretRef:
@@ -59,7 +59,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: crpi-he7mqvhihpnvi08o.cn-shanghai.personal.cr.aliyuncs.com/my-rag-project/rag-service:c27b2f9d84b0a4bf1f234320dc430f5e2ef6066d
+          image: crpi-he7mqvhihpnvi08o.cn-shanghai.personal.cr.aliyuncs.com/my-rag-project/rag-service:73985b997d8fadc580d340aa8da7fea50a7634e1
           imagePullPolicy: Always
           command: ["python", "ui.py"]
           env:
